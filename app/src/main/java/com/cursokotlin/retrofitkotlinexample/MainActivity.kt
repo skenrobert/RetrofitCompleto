@@ -41,13 +41,13 @@ class MainActivity : AppCompatActivity(), androidx.appcompat.widget.SearchView.O
         return Retrofit.Builder()
             .baseUrl("https://dog.ceo/api/breed/")
             .addConverterFactory(GsonConverterFactory.create())
-            .client(getClient())
+            .client(getClient()) // call intercept
             .build()
     }
 
-    private fun getClient(): OkHttpClient =
+    private fun getClient(): OkHttpClient = //this same return (=)
         OkHttpClient.Builder()
-            .addInterceptor(HeaderInterceptor())
+            .addInterceptor(HeaderInterceptor())// function interceptor add headersInterceptor
             .build()
 
 

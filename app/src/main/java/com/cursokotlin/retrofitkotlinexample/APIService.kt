@@ -13,20 +13,20 @@ interface APIService {
     @GET
     fun getCharacterByName(@Url url: String): Call<DogsResponse>
 
-    @GET("/example/example2/{id}/loquesea")
+    @GET("/example/example2/{id}/loquesea")// need path (id)
     fun getCharacterByName2(@Path("id") id: String): Call<DogsResponse>
 
     @GET("/example/example2/v2/loquesea")
     fun getCharacterByName3(
-        @Query("pet") pet: String,
-        @Query("name") name: String
+        @Query("pet") pet: String,//add two values
+        @Query("name") name: String//add two values
     ): Call<DogsResponse>
 
     @POST
     fun getEVERYTHING(@Body exampleArisDto: ExampleArisDto): Call<*>
 
 
-    @Multipart
+    @Multipart // split call
     @POST
     fun getEVERYTHING2(
         @Part image: MultipartBody.Part,
@@ -37,4 +37,4 @@ interface APIService {
 //    val a = MultipartBody.Part.createFormData("picture", file.getName(), requestBody);
 }
 
-data class ExampleArisDto(val name: String, val age: Int)
+data class ExampleArisDto(val name: String, val age: Int)  //create for example method post recommend move other directory
