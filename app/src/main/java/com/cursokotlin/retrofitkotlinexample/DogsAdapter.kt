@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.cursokotlin.retrofitkotlinexample.databinding.ItemDogBinding
 
-/**
- * Created by aristidesguimeraorozco on 5/5/18.
- */
+
 class DogsAdapter (val images: List<String>) : RecyclerView.Adapter<DogsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
